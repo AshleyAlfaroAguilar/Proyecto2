@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <style>
+        /*estilo del boton*/
+        h1{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 30px;
+            color: green;
+        }
+
+        section{
+            text-align: center;
+            margin: 300px auto;
+        }
+        section.midl{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin: auto;
+        }
+
+        button{
+            border: none;
+            background-color: rgb(153, 152, 152);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 800;
+            color: black;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: rgb(86, 84, 84);
+        }
+
+        #contarClick{
+            font-size: 45px;
+            font-weight: 800;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px;
+
+        }
+        #btnDec{
+            border: none;
+            background-color: rgb(153, 152, 152);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 800;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <section>
+        <div class="midl">
+            <div>
+                <h1>Counter</h1>
+            </div>
+            <button id="btnDec">Decrease</button>
+            <button id="btnClear">Reset</button>
+            <button id="btnClick">Increase</button>
+            <p id="contarClick"></p>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var btnElm =document.getElementById('btnClick'),
+        btnClear=document.getElementById('btnClear'),
+        btnDec=document.getElementById('btnDec');
+        var pElm = document.getElementById('contarClick');
+        var contar = 0;
+        pElm.textContent=0;
+        btnElm.onclick=function(){
+            contar++;
+            pElm.textContent=contar;
+        }
+        btnClear.onclick=function(){
+            pElm.textContent=0;
+            contar=0;
+        }
+        btnDec.onclick=function(){
+           contar--;
+            pElm.textContent=contar; 
+        }
+
+    </script>
+
+</body>
+</html>
